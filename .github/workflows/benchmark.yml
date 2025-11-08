@@ -15,13 +15,13 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.21'  # Adjust to your Go version
+          go-version: '1.21'  
       
       - name: Run benchmarks
         run: go test -bench . -benchmem ./... | tee benchmark_output.txt
       
       - name: Store benchmark result
-        uses: RodrigoVillar/github-action-benchmark@fix-go-bench-parsing  # Use your fork
+        uses: RodrigoVillar/github-action-benchmark@fix-go-bench-parsing-build
         with:
           tool: 'go'
           output-file-path: benchmark_output.txt
