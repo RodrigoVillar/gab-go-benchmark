@@ -21,7 +21,7 @@ jobs:
         run: go test -bench . -benchmem ./... | tee benchmark_output.txt
       
       - name: Store benchmark result
-        uses: RodrigoVillar/github-action-benchmark  # Use your fork
+        uses: RodrigoVillar/github-action-benchmark@fix-go-bench-parsing  # Use your fork
         with:
           tool: 'go'
           output-file-path: benchmark_output.txt
