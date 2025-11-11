@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+permissions:
+  contents: write      # Needed to push to gh-pages
+
 jobs:
   benchmark:
     runs-on: ubuntu-latest
