@@ -4,21 +4,15 @@ import (
 	"testing"
 )
 
-func BenchmarkFib10(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		var _ = Fib(10)
-	}
-}
-
-func BenchmarkFib20(b *testing.B) {
+func BenchmarkFib20WithBlockchainMetrics(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		var _ = Fib(20)
 	}
-}
 
-func BenchmarkFib20WithAuxMetric(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		var _ = Fib(20)
-	}
-	b.ReportMetric(4.0, "auxMetricUnits")
+	b.ReportMetric(0, "ns/op")
+	b.ReportMetric(1.0, "block_accept_ms/ggas")
+	b.ReportMetric(2.0, "block_parse_ms/ggas")
+	b.ReportMetric(3.0, "block_parse_ms/ggas")
+	b.ReportMetric(4.0, "mgas/s")
+	b.ReportMetric(5.0, "ms/ggas")
 }
