@@ -5,6 +5,7 @@ import (
 )
 
 func BenchmarkFib20WithBlockchainMetrics(b *testing.B) {
+	// Do some work here
 	for i := 0; i < b.N; i++ {
 		var _ = Fib(20)
 	}
