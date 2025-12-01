@@ -6,6 +6,7 @@ import (
 	"strconv"
 )
 
+// XXX: clean this up
 type BenchmarkResult struct {
 	Name  string `json:"name"`
 	Value string `json:"value"`
