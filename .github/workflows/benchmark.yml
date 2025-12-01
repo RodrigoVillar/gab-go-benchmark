@@ -21,15 +21,15 @@ jobs:
           go-version: '1.21'  
       
       - name: Run benchmarks
-        run: go test -bench . -benchmem ./... | tee benchmark_output.txt
-      
+        run: go test -v -run TestCustomBenchmark ./...
+
       - name: Store benchmark result
-        uses: RodrigoVillar/github-action-benchmark@fix-go-bench-parsing-build
+        uses: benchmark-action/github-action-benchmark@v1.20.7
         with:
-          tool: 'go'
-          output-file-path: benchmark_output.txt
+          tool: 'customBiggerIsBetter'
+          output-file-path: benchmark_output.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: true
           # Only update on main branch
-          comment-on-alert: true
+          comment-on-alert: false
           fail-on-alert: false
