@@ -16,7 +16,6 @@ func TestCustomBenchmark(t *testing.T) {
 	tool.AddResult("Beta", 2.2, "block_parse_ms/ggas")
 	tool.AddResult("Charlie", 3.3, "block_verify_ms/ggas")
 	tool.AddResult("Delta", 4.0, "mgas/s")
-	tool.AddResult("Echo", 5.0, "ms/ggas")
 
 	// Save results to file
 	if err := tool.SaveToFile("benchmark_output.json"); err != nil {
